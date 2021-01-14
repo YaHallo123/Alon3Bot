@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "tmi.js": "^1.7.1"
+  },
+  "scripts": {
+    "start": "node Alon3Bot.js"
   }
 }
