@@ -56,7 +56,13 @@ function onMessageHandler(target, context, msg, self) {
         client.say(target, `@${userVar}, o tamanho da sua pingola ${arg1}é de ${random}cm`)
     } else if(commandName === "!daoban") {
         let arg = "";
-        if(args[0] !== undefined ) arg = `@${args[0]} `;
+        console.log(args);
+        if(args[0] !== undefined ) {arg = `@${args[0]} `};
+        if(args[0].toLowerCase && args[0].toLowerCase() === "alon3bot") {
+            
+            console.log("s");
+            return client.say(target, "Não vai me banir >:)");
+        }
         client.say(target, `${arg}VOCÊ ACABA DE SER  B A N I D O >:)`);
     } else { }
 }
