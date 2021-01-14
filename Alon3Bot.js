@@ -28,6 +28,7 @@ client.connect();
 
 function onMessageHandler(target, context, msg, self) {
     if(self) { return; }
+    console.log(target);
     if(context.username === 'nightbot' && (msg === 'nao' || msg === 'sim')) {
         client.say(target, "Para de ser do contra nightbot DarkMode DarkMode");
     }
@@ -53,9 +54,11 @@ function onMessageHandler(target, context, msg, self) {
         random++;
         if(args !== undefined && arg1 !== commandName) { arg1 = args.join(" ") + " "; } else { arg1 = ""; }
         client.say(target, `@${userVar}, o tamanho da sua pingola ${arg1}é de ${random}cm`)
-    } else {
-        console.log(`* Unknown command ${commandName}`);
-    }
+    } else if(commandName === "!daoban") {
+        let arg = "";
+        if(args[0] !== undefined ) arg = `@${args[0]} `;
+        client.say(target, `${arg}VOCÊ ACABA DE SER  B A N I D O >:)`);
+    } else { }
 }
 
 function rollDice () {
@@ -68,7 +71,5 @@ function onConnectedHandler (addr, port) {
 }
 
 function onRaidedHandler(channel, username, viewers) {
-    console.log(channel);
-    console.log(username);
-    console.log(viewers);
+    client.say(channel, ` GlitchCat GlitchCat @${username}, Valeu pela raid com ${views} espectadores meu mano, espero que a live tenha sido braba! Sejam Todos Bem Vindos! GlitchCat GlitchCat `)
 }
