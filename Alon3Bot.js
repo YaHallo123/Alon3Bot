@@ -5,7 +5,7 @@ const { Config } = require("node-json-db/dist/lib/JsonDBConfig");
 
 const CommandDB = new JsonDB("command-db", true, true, "/");
 
-if(!CommandDB.exists("/commands")) CommandDB.push("/commands");
+if(!CommandDB.exists("/commands")) CommandDB.push("/commands", []);
 
 const opts = {
     identity: {
