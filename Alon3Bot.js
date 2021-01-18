@@ -49,6 +49,10 @@ client.on("raided", onRaidedHandler);
 client.connect();
 
 function onMessageHandler(target, context, msg, self) {
+    if(context.username === 'nightbot' && (msg === 'nao' || msg === 'sim')) {
+        client.say(target, "Para de ser do contra nightbot DarkMode DarkMode");
+    }
+    
     let args = msg.split(/ +/g);
 
     const commandName = args.splice(0, 1)[0];
@@ -56,9 +60,6 @@ function onMessageHandler(target, context, msg, self) {
     let userVar = context.username;
     if(self && commandName !== "!daoban") { return; }
     console.log(target);
-    if(context.username === 'nightbot' && (msg === 'nao' || msg === 'sim')) {
-        client.say(target, "Para de ser do contra nightbot DarkMode DarkMode");
-    }
     if(context.username === 'nightbot') { return; }
 
 
