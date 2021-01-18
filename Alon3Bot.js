@@ -1,6 +1,7 @@
 const { Client } = require("tmi.js");
 
-const { JsonDB, Config } = require("node-json-db");
+const { JsonDB } = require("node-json-db");
+const { Config } = require("node-json-db/dist/lib/JsonDBConfig");
 
 const CommandDB = new JsonDB(new Config("command-db", true, true, "/"));
 
