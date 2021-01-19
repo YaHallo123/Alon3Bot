@@ -1,0 +1,8 @@
+{
+    "commands": [
+        {
+            "name": "!dice",
+            "message": "You rolled a $[count]"
+        }
+    ]
+}

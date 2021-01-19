@@ -5,7 +5,14 @@ const { Config } = require("node-json-db/dist/lib/JsonDBConfig");
 
 const CommandDB = new JsonDB("command-db", true, true, "/");
 
-if(!CommandDB.exists("/commands")) CommandDB.push("/commands", []);
+if(!CommandDB.exists("/commands")) CommandDB.push("/commands[]", {
+    name: "!dice",
+    message: "You rolled a $[count]"
+});
+
+const $8ballResp = [
+
+];
 
 const opts = {
     identity: {
@@ -32,6 +39,7 @@ const commands = [
     "nao",
     "sim",
     "!pack",
+    "!paofilosofy",
     "!sr",
     "!musica",
     "!pés",
@@ -52,6 +60,18 @@ const commands = [
 client.on('message', onMessageHandler);
 client.on('connected', onConnectedHandler);
 client.on("raided", onRaidedHandler);
+client.on("whisper", async (from, us, msg, self) => {
+    console.log(from);
+    console.log(us);
+    console.log(msg);
+    console.log(self);
+    try {
+        let resp = await client.whisper(from, "yay");
+        console.log(resp)
+    } catch (e) {
+        console.log(e);
+    }
+});
 
 client.connect();
 
@@ -71,9 +91,7 @@ function onMessageHandler(target, context, msg, self) {
 
 
     if(commandName === "!dice") {
-        const num = rollDice();
-        client.say(target, `You rolled a ${num}`);
-        console.log(`* Executed ${commandName} command`);
+        let dice = CommandDB.getData("/commands", "name", "!dice");
     } else if(commandName.toLowerCase() === 'its' || commandName.toLowerCase() === 'it\'s') { 
         if(args[0].toLowerCase() === "grongos") client.say(target, "/me ITS GRONGOS POHA 😎😎😎😎😎😎😎")
     }else if(commandName === "!comandos") { 
@@ -121,13 +139,19 @@ function onMessageHandler(target, context, msg, self) {
         } else if(args[0].toLowerCase() === "bot") { 
             client.say(target, "/me SUPREMACIA @Alon3Bot O MELHOR DE TODOS 😎😎😎😎😎😎😎");
         }
+    } else if(commandName === "!8ball") { 
+        client.say
     } else if(commandName === "!so") { 
         client.say(target, `www.twitch.tv/${args[0].toLowerCase()} PowerUpL GlitchCat PowerUpR PowerUpL GlitchCat PowerUpR Passem lá na live do/a mano/a @${args[0]}`)
-    } else if(commandName === "!jomax") { 
-        
+    } else if(commandName === "!whisper" && context["user-type"] !== "") { 
+        let name = args.shift();
+        console.log(name)
+        console.log(args.join(" "))
+        client.whisper("#"+name, args.join(" "));
     } else if(commandName === "!addcommand") { 
-        
         client.say(target, (new Function())())
+    } else if(commandName === '!paofilosofy') { 
+        client.say(target, `Você já é velho suficiente pra ter visto ${Math.round(Number(args[0]) * 365.25)} pães velhos`);
     } else if(commandName.startsWith("😳")) { 
         client.say(target, commandName)
     } else { }
@@ -144,4 +168,8 @@ function onConnectedHandler (addr, port) {
 
 function onRaidedHandler(channel, username, viewers) {
     client.say(channel, ` GlitchCat GlitchCat @${username}, Valeu pela raid com ${viewers} espectadores meu mano, espero que a live tenha sido braba! Sejam Todos Bem Vindos! GlitchCat GlitchCat `)
+}
+
+function ExeCommand(command) {
+    
 }
