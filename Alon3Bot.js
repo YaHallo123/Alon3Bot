@@ -133,6 +133,10 @@ function onMessageHandler(target, context, msg, self) {
         if((args[0] === "" || args[0] === undefined || args[0] === null) || context['user-type'] === "" || (args[1] === "" || args[1] === undefined || args[1] === null)) return;
         let name = args.shift();
         client.say(`${name === 'self' ? target : '#' + name}`, args.join(" "));
+    } else if(commandName === "!vick") { 
+
+    } else if(commandName.toLowerCase() === "pog") { 
+        client.say(target, '/me DMSSS 🤩🤩🤩');
     } else if(commandName.toLowerCase() === "na" || commandName.toLowerCase() === "n/a") { 
         if(args[0].toLowerCase() === "mod") {
             client.say(target, "/me OLHA LA O MOD FAZENDO CAGADA 👌👌👌🤡🤡🤡");
