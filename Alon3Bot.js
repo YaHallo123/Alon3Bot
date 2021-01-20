@@ -22,7 +22,8 @@ const opts = {
     channels: [
         "igorpereira2718",
         "taosozinho",
-        "Alon3Bot"
+        "Alon3Bot",
+        "MisterPocoyoo"
     ],
     logger: {
         error: (msg) => console.log(msg),
