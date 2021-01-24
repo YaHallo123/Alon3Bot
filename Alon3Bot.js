@@ -60,6 +60,11 @@ const commands = [
 client.on('message', onMessageHandler);
 client.on('connected', onConnectedHandler);
 client.on("raided", onRaidedHandler);
+client.on('join', (channel, username, self) => {
+    if(!self || true) return;
+    
+    client.say(channel, "/me BOT ONN TROPA 🤡🤡🤡🤡🤡🤡🤡🤡🤡🤡🤡😈😈😈😈😈😈😈😈😈!!!!!!!!!!");
+});
 client.on("whisper", async (from, us, msg, self) => {
     console.log(from);
     console.log(us);
@@ -77,87 +82,133 @@ client.connect();
 
 function onMessageHandler(target, context, msg, self) {
     if(context.username === 'nightbot' && (msg === 'nao' || msg === 'sim')) {
-        client.say(target, "Para de ser do contra nightbot DarkMode DarkMode");
+        "return Para de ser do contra nightbot DarkMode DarkMode"
     }
 
     let args = msg.split(/ +/g);
 
-    const commandName = args.splice(0, 1)[0];
+    const commandName = args.shift();
     console.log(commandName)
     let userVar = context.username;
-    if(self && commandName !== "!daoban") { return; }
-    console.log(target);
-    if(context.username === 'nightbot') { return; }
+    // if(self && commandName !== "!daoban") { return; }
+    // console.log(target);
+    // if(context.username === 'nightbot') { return; }
 
+    // if(commandName === "!addcomando" && context['user-type'] !== '') {
+    //     var command = {};
+    //     command.name = args.shift();
+    //     console.log(args);
+    //     let splitmsg = args.join(' ').split('--init');
+    //     console.log(splitmsg);
+    //     command.message = splitmsg[0];
+    //     let init = (splitmsg[1] || ['']).join(' ');
+    //     const AddFunction = new Function('_$', 'CommandDB', `${init !== '' ? command.init + ';' : ''}` + 'CommandDB.push(\'/commands[]\', _$);console.log(\'hello\')');
+    //     AddFunction(command, CommandDB);
+    //     return;        
+    // } else {
+    //     ExeCommand(target, commandName, args);
+    // }
 
-    if(commandName === "!dice") {
-        let dice = CommandDB.getData("/commands", "name", "!dice");
+    if(commandName === '!addcomando') { 
+
     } else if(commandName.toLowerCase() === 'its' || commandName.toLowerCase() === 'it\'s') { 
-        if(args[0].toLowerCase() === "grongos") client.say(target, "/me ITS GRONGOS POHA 😎😎😎😎😎😎😎")
+        client.say(target, "/me BOT TÁ EM MANUTENÇÃO AI GUYS 🚧🚧🚧🚧🚧🚧🚧⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠")
+        
     }else if(commandName === "!comandos") { 
-        client.say(target, "/me "+commands.join(", "))
+        client.say(target, "/me BOT TÁ EM MANUTENÇÃO AI GUYS 🚧🚧🚧🚧🚧🚧🚧⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠")
+        // client.say(target, "/me "+commands.join(", "))
     } else if(commandName === "!pack") {
-        let chance = Math.round((Math.random() + Number.EPSILON) * 1000) / 10 
-        client.say(target, `@${userVar}, sua chance de receber um pack do pé do Ademir é de ${chance}%`)
+        client.say(target, "/me BOT TÁ EM MANUTENÇÃO AI GUYS 🚧🚧🚧🚧🚧🚧🚧⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠")
+        // let chance = Math.round((Math.random() + Number.EPSILON) * 1000) / 10 
+        // client.say(target, `@${userVar}, sua chance de receber um pack do pé do Ademir é de ${chance}%`)
+        "let chance = Math.round((Math.random() + Number.EPSILON) * 1000) / 10 return `@${userVar}, sua chance de receber um pack do pé do Ademir é de ${chance}%`)"
     } else if(commandName === "!pingola") {
-        let arg1 = ""
-        let random = Math.round((Math.random() + Number.EPSILON) * 190) / 10;
-        random++;
-        if(args !== undefined && arg1 !== commandName) { arg1 = args.join(" ") + " "; } else { arg1 = ""; }
-        client.say(target, `@${userVar}, o tamanho da sua pingola ${arg1}é de ${random}cm`)
+        client.say(target, "/me BOT TÁ EM MANUTENÇÃO AI GUYS 🚧🚧🚧🚧🚧🚧🚧⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠")
+        // let arg1 = ""
+        // let random = Math.round((Math.random() + Number.EPSILON) * 190) / 10;
+        // random++;
+        // if(args !== undefined && arg1 !== commandName) { arg1 = args.join(" ") + " "; } else { arg1 = ""; }
+        // client.say(target, `@${userVar}, o tamanho da sua pingola ${arg1}é de ${random}cm`)
     } else if(commandName === "!daoban") {
-        let arg = "";
-        console.log(args);
-        if(args[0] !== undefined ) {arg = `@${args[0]} `};
-        if(args[0].toLowerCase && args[0].toLowerCase() === "alon3bot") {
+        client.say(target, "/me BOT TÁ EM MANUTENÇÃO AI GUYS 🚧🚧🚧🚧🚧🚧🚧⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠")
+        // let arg = "";
+        // console.log(args);
+        // if(args[0] !== undefined ) {arg = `@${args[0]} `};
+        // if(args[0] && args[0].toLowerCase && args[0].toLowerCase() === "alon3bot") {
             
-            console.log("s");
-            return client.say(target, "Não vai me banir >:)");
-        }
-        client.say(target, `${arg}VOCÊ ACABA DE SER  B A N I D O >:)`);
+        //     console.log("s");
+        //     return client.say(target, "Não vai me banir >:)");
+        // }
+        // client.say(target, `${arg}VOCÊ ACABA DE SER  B A N I D O >:)`);
     } else if(commandName === "!taloco") {
-        client.say(target, "Pois é... Ademiro ta loco DarkMode")
+        client.say(target, "/me BOT TÁ EM MANUTENÇÃO AI GUYS 🚧🚧🚧🚧🚧🚧🚧⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠")
+        // client.say(target, "Pois é... Ademiro ta loco DarkMode")
     } else if (commandName === "!fumaça") { 
-        client.say(target, "É Umidificador só 😳");
+        client.say(target, "/me BOT TÁ EM MANUTENÇÃO AI GUYS 🚧🚧🚧🚧🚧🚧🚧⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠")
+        // client.say(target, "É Umidificador só 😳");
     } else if (commandName === "!shaco") {
-        client.say(target, "Basicamente mono shaco, mas agora que vou começar a jogar mais competitivamente to treinando alguns outros tipo gragas pq vao banir shaco")
+        client.say(target, "/me BOT TÁ EM MANUTENÇÃO AI GUYS 🚧🚧🚧🚧🚧🚧🚧⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠")
+        // client.say(target, "Basicamente mono shaco, mas agora que vou começar a jogar mais competitivamente to treinando alguns outros tipo gragas pq vao banir shaco")
     } else if (commandName === "!saddantas") {
-        client.say(target, "PERA O DANTAS TEM XERECÃO?");
+        client.say(target, "/me BOT TÁ EM MANUTENÇÃO AI GUYS 🚧🚧🚧🚧🚧🚧🚧⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠")
+        // client.say(target, "PERA O DANTAS TEM XERECÃO?");
     } else if (commandName === "!musica") {
-        client.say(target, "Para adicionar músicas na song request, digite ai !sr e o nome da música ou um link do YouTube/SoundCloud")
+        client.say(target, "/me BOT TÁ EM MANUTENÇÃO AI GUYS 🚧🚧🚧🚧🚧🚧🚧⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠")
+        // client.say(target, "Para adicionar músicas na song request, digite ai !sr e o nome da música ou um link do YouTube/SoundCloud, só lembra de ser BR, musica gringa pode dar copyright 😢👌")
     } else if (commandName === "!tutorial") {
-        client.say(target, "Segue o Link -> https://nightbot.tv/login e entra com sua conta twitch, se não for logo em seguida vai pra https://nightbot.tv/dashboard e clica em Join Channel, no seu canal da twitch, conceda Permissões de moderador digitando /mod Nightbot")  
+        client.say(target, "/me BOT TÁ EM MANUTENÇÃO AI GUYS 🚧🚧🚧🚧🚧🚧🚧⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠")
+        // client.say(target, "Segue o Link -> https://nightbot.tv/login e entra com sua conta twitch, se não for logo em seguida vai pra https://nightbot.tv/dashboard e clica em Join Channel, no seu canal da twitch, conceda Permissões de moderador digitando /mod Nightbot")  
     } else if (commandName === "!baderna") {
-        client.say(target, "O ADM ESTÁ ON!!! PODE BADERNAR 👺👺")
+        client.say(target, "/me BOT TÁ EM MANUTENÇÃO AI GUYS 🚧🚧🚧🚧🚧🚧🚧⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠")
+        // client.say(target, "O ADM ESTÁ ON!!! PODE BADERNAR 👺👺")
+    } else if(commandName.toLowerCase() === "ja" || commandName.toLowerCase() === "já") { 
+        client.say(target, "/me BOT TÁ EM MANUTENÇÃO AI GUYS 🚧🚧🚧🚧🚧🚧🚧⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠")
+        // if(args[0].toLowerCase() === 'volto') client.say(target, "/me O MOD TA OFF, CABO A IGREJA 👺👺👺👺👺")
     } else if(commandName === "!say") { 
-        if((args[0] === "" || args[0] === undefined || args[0] === null) || context['user-type'] === "" || (args[1] === "" || args[1] === undefined || args[1] === null)) return;
-        let name = args.shift();
-        client.say(`${name === 'self' ? target : '#' + name}`, args.join(" "));
+        client.say(target, "/me BOT TÁ EM MANUTENÇÃO AI GUYS 🚧🚧🚧🚧🚧🚧🚧⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠")
+        // if((args[0] === "" || args[0] === undefined || args[0] === null) || context['user-type'] === "" || (args[1] === "" || args[1] === undefined || args[1] === null)) return;
+        // let name = args.shift();
+        // client.say(`${name === 'self' ? target : '#' + name}`, args.join(" "));
     } else if(commandName === "!vick") { 
+        client.say(target, "/me BOT TÁ EM MANUTENÇÃO AI GUYS 🚧🚧🚧🚧🚧🚧🚧⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠")
 
     } else if(commandName.toLowerCase() === "pog") { 
-        client.say(target, '/me DMSSS 🤩🤩🤩');
-    } else if(commandName.toLowerCase() === "na" || commandName.toLowerCase() === "n/a") { 
-        if(args[0].toLowerCase() === "mod") {
-            client.say(target, "/me OLHA LA O MOD FAZENDO CAGADA 👌👌👌🤡🤡🤡");
-        } else if(args[0].toLowerCase() === "bot") { 
-            client.say(target, "/me SUPREMACIA @Alon3Bot O MELHOR DE TODOS 😎😎😎😎😎😎😎");
-        }
+        client.say(target, "/me BOT TÁ EM MANUTENÇÃO AI GUYS 🚧🚧🚧🚧🚧🚧🚧⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠")
+    //     client.say(target, '/me DMSSS 🤩🤩🤩');
+    // } else if(commandName.toLowerCase() === "na" || commandName.toLowerCase() === "n/a") { 
+        client.say(target, "/me BOT TÁ EM MANUTENÇÃO AI GUYS 🚧🚧🚧🚧🚧🚧🚧⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠")
+        // if(args[0].toLowerCase() === "mod") {
+        //     client.say(target, "/me OLHA LA O MOD FAZENDO CAGADA 👌👌👌🤡🤡🤡");
+        // }else if(args[0].toLowerCase() === "bot") { 
+        //     client.say(target, "/me SUPREMACIA @Alon3Bot O MELHOR DE TODOS 😎😎😎😎😎😎😎");
+        // }
     } else if(commandName === "!8ball") { 
-        client.say
+        client.say(target, "/me BOT TÁ EM MANUTENÇÃO AI GUYS 🚧🚧🚧🚧🚧🚧🚧⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠")
+        // client.say
     } else if(commandName === "!so") { 
-        client.say(target, `www.twitch.tv/${args[0].toLowerCase()} PowerUpL GlitchCat PowerUpR PowerUpL GlitchCat PowerUpR Passem lá na live do/a mano/a @${args[0]}`)
+        client.say(target, "/me BOT TÁ EM MANUTENÇÃO AI GUYS 🚧🚧🚧🚧🚧🚧🚧⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠")
+        // client.say(target, `www.twitch.tv/${args[0].toLowerCase()} PowerUpL GlitchCat PowerUpR PowerUpL GlitchCat PowerUpR Passem lá na live do/a mano/a @${args[0]}`)
     } else if(commandName === "!whisper" && context["user-type"] !== "") { 
-        let name = args.shift();
-        console.log(name)
-        console.log(args.join(" "))
-        client.whisper("#"+name, args.join(" "));
+        client.say(target, "/me BOT TÁ EM MANUTENÇÃO AI GUYS 🚧🚧🚧🚧🚧🚧🚧⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠")
+        // let name = args.shift();
+        // console.log(name)
+        // console.log(args.join(" "))
+        // client.whisper("#"+name, args.join(" "));
     } else if(commandName === "!addcommand") { 
-        client.say(target, (new Function())())
+        client.say(target, "/me BOT TÁ EM MANUTENÇÃO AI GUYS 🚧🚧🚧🚧🚧🚧🚧⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠")
+        // client.say(target, (new Function())())
     } else if(commandName === '!paofilosofy') { 
-        client.say(target, `Você já é velho suficiente pra ter visto ${Math.round(Number(args[0]) * 365.25)} pães velhos`);
+        client.say(target, "/me BOT TÁ EM MANUTENÇÃO AI GUYS 🚧🚧🚧🚧🚧🚧🚧⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠")
+        // if(args[0] === undefined || args[0] === "") {
+        //     return client.say(target, "Se dissermos que 1 pão estraga em 1 dia, cada dia da sua vida você poderia ter visto 1 pão envelhecer pra cada dia que você viveu 😳👌")
+        // }
+        // client.say(target, `Você já é velho suficiente pra ter visto ${Math.round(Number(args[0]) * 365.25)} pães velhos`);
+    } else if(commandName === "matriz?") { 
+        client.say(target, "/me BOT TÁ EM MANUTENÇÃO AI GUYS 🚧🚧🚧🚧🚧🚧🚧⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠")
+        // client.say(target, "/me MATRIZ? KKKJ")
     } else if(commandName.startsWith("😳")) { 
-        client.say(target, commandName)
+        client.say(target, "/me BOT TÁ EM MANUTENÇÃO AI GUYS 🚧🚧🚧🚧🚧🚧🚧⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠")
+        // client.say(target, commandName)
     } else { }
 }
 
@@ -174,6 +225,18 @@ function onRaidedHandler(channel, username, viewers) {
     client.say(channel, ` GlitchCat GlitchCat @${username}, Valeu pela raid com ${viewers} espectadores meu mano, espero que a live tenha sido braba! Sejam Todos Bem Vindos! GlitchCat GlitchCat `)
 }
 
-function ExeCommand(command) {
-    
+function ExeCommand(target, commandName, args) {  
+    try {
+        console.log(commandName);
+        let i = CommandDB.getIndex("/commands", commandName, "name");
+        let command = CommandDB.getData(`/commands[${i}]`);
+        console.log(command);
+        let exec = new Function("_$", "args", command.message);
+        let resp = exec(command, args).toString();
+        console.log(resp)
+        if(resp === undefined || resp === null) return;
+        client.say(target, resp);
+    } catch(e) {
+        console.log(e);
+    }
 }

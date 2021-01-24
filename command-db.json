@@ -3,6 +3,16 @@
         {
             "name": "!dice",
             "message": "You rolled a $[count]"
+        },
+        {
+            "name": "!foo",
+            "message": "return 2 + 2",
+            "init": ""
+        },
+        {
+            "name": "its",
+            "message": "if(args[0].toLowerCase() === 'grongos') return '/me ITS GRONGOS POHA 😎😎😎😎😎😎😎'",
+            "init": ""
         }
     ]
 }
