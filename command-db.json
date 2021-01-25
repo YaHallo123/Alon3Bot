@@ -2,17 +2,122 @@
     "commands": [
         {
             "name": "!dice",
-            "message": "You rolled a $[count]"
-        },
-        {
-            "name": "!foo",
-            "message": "return 2 + 2",
-            "init": ""
+            "message": "return `Você girou um ${Math.round((Math.random() + Number.EPSILON) * 6)}`"
         },
         {
             "name": "its",
-            "message": "if(args[0].toLowerCase() === 'grongos') return '/me ITS GRONGOS POHA 😎😎😎😎😎😎😎'",
-            "init": ""
+            "message": "if(args[0].toLowerCase() === 'grongos') return '/me ITS GRONGOS POHA 😎😎😎😎😎😎😎'"
+        },
+        {
+            "name": "!pack",
+            "message": "let chance = Math.round((Math.random() + Number.EPSILON) * 1000) / 10; return `@${context.username}, sua chance de receber um pack do pé do Ademir é de ${chance}%`"
+        },
+        {
+            "name": "!pingola",
+            "message": "let arg1 = '';let random = Math.round((Math.random() + Number.EPSILON) * 190) / 10;random++;if(args !== undefined && arg1 !== commandName) { arg1 = args.join(' ') + ' '; } else { arg1 = ''; }return `@${context.username}, o tamanho da sua pingola ${arg1}é de ${random}cm`"
+        },
+        {
+            "name": "!daoban",
+            "message": "let arg = '';if(args[0] !== undefined ) {arg = `@${args[0]} `}if(args[0] && args[0].toLowerCase && args[0].toLowerCase() === 'alon3bot') {return 'Não vai me banir >:)'; } return `${arg}VOCÊ ACABA DE SER B A N I D O >:)`;"
+        },
+        {
+            "name": "!taloco",
+            "message": "return 'Pois é... Ademiro ta loco DarkMode'"
+        },
+        {
+            "name": "!fumaça",
+            "message": "return 'É Umidificador só 😳'"
+        },
+        {
+            "name": "!shaco",
+            "message": "return 'Basicamente mono shaco, mas agora que vou começar a jogar mais competitivamente to treinando alguns outros tipo gragas pq vao banir shaco'"
+        },
+        {
+            "name": "!saddantas",
+            "message": "return 'PERA O DANTAS TEM XERECÃO?'"
+        },
+        {
+            "name": "!musica",
+            "message": "return 'Para adicionar músicas na song request, digite ai !sr e o nome da música ou um link do YouTube/SoundCloud, só lembra de ser BR, musica gringa pode dar copyright 😢👌'"
+        },
+        {
+            "name": "!tutorial",
+            "message": "return 'Segue o Link -> https://nightbot.tv/login e entra com sua conta twitch, se não for logo em seguida vai pra https://nightbot.tv/dashboard e clica em Join Channel, no seu canal da twitch, conceda Permissões de moderador digitando /mod Nightbot'"
+        },
+        {
+            "name": "!baderna",
+            "message": "return 'O ADM ESTÁ ON!!! PODE BADERNAR 👺👺'"
+        },
+        {
+            "name": "ja",
+            "message": "if(args[0].toLowerCase() === 'volto' && context['user-type'] !== '') client.say(target, '/me O MOD TA OFF, CABO A IGREJA 👺👺👺👺👺')"
+        },
+        {
+            "name": "já",
+            "message": "if(args[0].toLowerCase() === 'volto' && context['user-type'] !== '') client.say(target, '/me O MOD TA OFF, CABO A IGREJA 👺👺👺👺👺')"
+        },
+        {
+            "name": "!say",
+            "message": "if((args[0] === '' || args[0] === undefined || args[0] === null) || context['user-type'] === '' || (args[1] === '' || args[1] === undefined || args[1] === null)) return;let name = args.shift();client.say(`${name === 'self' ? target : '#' + name}`, args.join(' '));"
+        },
+        {
+            "name": "pog",
+            "message": "return '/me DMSSS 🤩🤩🤩'"
+        },
+        {
+            "name": "na",
+            "message": "if(args[0].toLowerCase() === 'mod') {return '/me OLHA LA O MOD FAZENDO CAGADA 👌👌👌🤡🤡🤡'} else if(args[0].toLowerCase() === 'bot') { return '/me SUPREMACIA @Alon3Bot O MELHOR DE TODOS 😎😎😎😎😎😎😎'}"
+        },
+        {
+            "name": "n/a",
+            "message": "if(args[0].toLowerCase() === 'mod') {return '/me OLHA LA O MOD FAZENDO CAGADA 👌👌👌🤡🤡🤡'} else if(args[0].toLowerCase() === 'bot') { return '/me SUPREMACIA @Alon3Bot O MELHOR DE TODOS 😎😎😎😎😎😎😎'}"
+        },
+        {
+            "name": "!8ball",
+            "message": "return _$.options[Math.floor(Math.random() * _$.options.length)] ",
+            "options": [
+                "Sei lá menó",
+                "Com certeza",
+                "Essa dai vai ter que ficar no ar",
+                "Definitivamente não",
+                "Sinceramente tanto faz",
+                "Eu diria que não",
+                "Eu diria que sim",
+                "Pergunte aos profissionais",
+                "Não parece uma má ideia",
+                "Tudo indica que sim..."
+            ]
+        },
+        {
+            "name": "!so",
+            "message": "return `www.twitch.tv/${args[0].toLowerCase()} PowerUpL GlitchCat PowerUpR PowerUpL GlitchCat PowerUpR Passem lá na live do/a mano/a @${args[0]}`"
+        },
+        {
+            "name": "!paofilosofy",
+            "message": "if(args[0] === undefined || args[0] === '') {return 'Se dissermos que 1 pão estraga em 1 dia, cada dia da sua vida você poderia ter visto 1 pão envelhecer pra cada dia que você viveu 😳👌'}return `Você já é velho suficiente pra ter visto ${Math.round(Number(args[0]) * 365.25)} pães velhos`"
+        },
+        {
+            "name": "matriz?",
+            "message": "return '/me MATRIZ? KKKJ'"
+        },
+        {
+            "name": "!ad",
+            "message": "return 'Se a gente banir Kai’Sa 😮🚫 eles vão escolher a Xayah 😕😡 Mas se eles forem de Akali no mid😤🥵🗡️ a gente picka Irelia 🤩😏🧐 No top... com certeza Ryze 🤓🥰 Hmmm, do que que eu tô esquecendo? 🤔🤔 🌊💦😓 Novo Gillette MACH3 com tecnologia Acqua Grip 🪒😮 Controle total até quando estiver molhado 😍💦👌'"
+        },
+        {
+            "name": "!chifre",
+            "message": "return `@${context.username}, A imensidão da sua corneza é de ${Math.round((Math.random() + Number.EPSILON)*200)/10}cm`;"
+        },
+        {
+            "name": "!pula",
+            "message": "if(commandName === '!pula') {try {let i = CommandDB.getIndex('/commands', _$.name, 'name');if(args[0].toLowerCase() === 'sim' && !_$.users.includes(context.username)) {_$.yes = _$.yes + 1;_$.users = [..._$.users, context.username];CommandDB.push(`/commands[${i}]`, _$, false);return `@${context.username}, Votou para pular a música e tem ${_$.yes} votos.`} else if((args[0].toLowerCase() === 'nao' || args[0].toLowerCase() === 'não') && !_$.users.includes(context.username)) {_$.no = _$.no + 1;_$.users = [..._$.users, context.username];CommandDB.push(`/commands[${i}]`, _$, true);return `@${context.username}, Votou para pular a música e tem ${_$.no} votos.`} else if(args[0].toLowerCase() === 'reset' && context['user-type'] !== '') {_$.yes = 0;_$.no = 0;_$.users=[];CommandDB.push(`/commands[${i}]`, _$, false);} else if(args[0].toLowerCase() === 'result' && context['user-type'] !== '') { return `O resultado da votação foi... Sim: ${_$.yes} X Não: ${_$.no}` }} catch(e) {console.log(e);}}",
+            "yes": 0,
+            "no": 0,
+            "users": []
+        },
+        {
+            "name": "!ppt",
+            "message": "let ppt=['papel','tesoura','pedra'];let botresp = ppt[Math.floor(Math.random()*ppt.length)];client.say(target, `/me ${botresp}`);switch(botresp) {case 'papel':switch(args[0].toLowerCase()) {case 'papel': return '/me LANSA DNV AI SE TEM CORAGEM';case 'tesoura':return '/me Maldito 👺👺👺😡😡😡😡👿👿👿';case 'pedra':return '/me Perdeu pro bot? KKKKKJ 😈😈😈😈😈';default: return '/me Esse ai não vale 🤨🤨';}case 'tesoura':switch(args[0].toLowerCase()) {case 'papel': return '/me Perdeu pro bot? KKKKKJ 😈😈😈😈😈';case 'tesoura':return '/me LANSA DNV AI SE TEM CORAGEM';case 'pedra':return '/me Maldito 👺👺👺😡😡😡😡👿👿👿';default: return '/me Esse ai não vale 🤨🤨';}case 'pedra':switch(args[0].toLowerCase()) {case 'papel': return '/me Maldito 👺👺👺😡😡😡😡👿👿👿';case 'tesoura':return '/me Perdeu pro bot? KKKKKJ 😈😈😈😈😈';case 'pedra':return '/me LANSA DNV AI SE TEM CORAGEM';default: return '/me Esse ai não vale 🤨🤨';}}"
         }
     ]
 }
