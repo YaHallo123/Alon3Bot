@@ -18,7 +18,7 @@
         },
         {
             "name": "!daoban",
-            "message": "let arg = '';if(args[0] !== undefined ) {arg = `@${args[0]} `}if(args[0] && args[0].toLowerCase && args[0].toLowerCase() === 'alon3bot') {return 'Não vai me banir >:)'; } return `${arg}VOCÊ ACABA DE SER B A N I D O >:)`;"
+            "message": "let arg = '';if(args[0] !== undefined ) {arg = `@${args[0]} `}if(args[0] && args[0].toLowerCase && args[0].toLowerCase() === 'alon3bot') {return 'Não vai me banir >:)'; } return `${arg}VOCÊ ACABA DE SER B A N I D O(A) >:)`;"
         },
         {
             "name": "!taloco",
@@ -46,7 +46,7 @@
         },
         {
             "name": "!baderna",
-            "message": "return 'O ADM ESTÁ ON!!! PODE BADERNAR 👺👺'"
+            "message": "return 'COMEÇE A BADERNA. COMEÇE A BADERNA DE IMEDIATO 👺👺'"
         },
         {
             "name": "ja",
@@ -94,7 +94,7 @@
         },
         {
             "name": "!paofilosofy",
-            "message": "if(args[0] === undefined || args[0] === '') {return 'Se dissermos que 1 pão estraga em 1 dia, cada dia da sua vida você poderia ter visto 1 pão envelhecer pra cada dia que você viveu 😳👌'}return `Você já é velho suficiente pra ter visto ${Math.round(Number(args[0]) * 365.25)} pães velhos`"
+            "message": "if(args[0] === undefined || args[0] === '') {return 'Se dissermos que 1 pão estraga em 1 dia, cada dia da sua vida você poderia ter visto 1 pão envelhecer pra cada dia que você viveu 😳👌'}return `Você já é velho(a) suficiente pra ter visto ${Math.round(Number(args[0]) * 365.25)} pães velhos`"
         },
         {
             "name": "matriz?",
@@ -118,7 +118,7 @@
         {
             "name": "!ppt",
             "users": [],
-            "message": "let i = CommandDB.getIndex('/commands', '!ppt', 'name');CommandDB.push(`/commands[${i}]/users[]`, {name:context.username}, false);setTimeout(() => {let stat = CommandDB.filter(`/commands[${i}]/users`,(e) => e.name === context.username);if(args[0] === 'stats') { let win = stat.win || 0;let lose  = stat.lose || 0; return `voce tem ${win}x${lose}`; }let ppt=['papel','tesoura','pedra'];let botresp = ppt[Math.floor(Math.random()*ppt.length)];client.say(target, `/me ${botresp}`);switch(botresp) {case 'papel':switch(args[0].toLowerCase()) {case 'papel': return '/me LANSA DNV AI SE TEM CORAGEM';case 'tesoura':stat.win = (stat.win || 0) + 1;CommandDB.push(`/commands[${i}]/users[]`, stat, false);return '/me Maldito 👺👺👺😡😡😡😡👿👿👿';case 'pedra':stat.lose = (stat.lose || 0) + 1;CommandDB.push(`/commands[${i}]/users[]`, stat, false);return '/me Perdeu pro bot? KKKKKJ 😈😈😈😈😈';default: return '/me Esse ai não vale 🤨🤨';}case 'tesoura':switch(args[0].toLowerCase()) {case 'papel': stat.lose = (stat.lose || 0) + 1;CommandDB.push(`/commands[${i}]/users[]`, stat, false);return '/me Perdeu pro bot? KKKKKJ 😈😈😈😈😈';case 'tesoura':return '/me LANSA DNV AI SE TEM CORAGEM';case 'pedra':stat.win = (stat.win || 0) + 1;CommandDB.push(`/commands[${i}]/users[]`, stat, false);return '/me Maldito 👺👺👺😡😡😡😡👿👿👿';default: return '/me Esse ai não vale 🤨🤨';}case 'pedra':switch(args[0].toLowerCase()) {case 'papel': stat.win = (stat.win || 0) + 1;CommandDB.push(`/commands[${i}]/users[]`, stat, false);return '/me Maldito 👺👺👺😡😡😡😡👿👿👿';case 'tesoura':stat.lose = (stat.lose || 0) + 1;CommandDB.push(`/commands[${i}]/users[]`, stat, false);return '/me Perdeu pro bot? KKKKKJ 😈😈😈😈😈';case 'pedra':return '/me LANSA DNV AI SE TEM CORAGEM';default: return '/me Esse ai não vale 🤨🤨';}}}, 1000)"
+            "message": "let ppt=['papel','tesoura','pedra'];let botresp = ppt[Math.floor(Math.random()*ppt.length)];client.say(target, `/me ${botresp}`);switch(botresp) {case 'papel':switch(args[0].toLowerCase()) {case 'papel': return '/me LANSA DNV AI SE TEM CORAGEM';case 'tesoura':return '/me Maldito 👺👺👺😡😡😡😡👿👿👿';case 'pedra':return '/me Perdeu pro bot? KKKKKJ 😈😈😈😈😈';default: return '/me Esse ai não vale 🤨🤨';}case 'tesoura':switch(args[0].toLowerCase()) {case 'papel': return '/me Perdeu pro bot? KKKKKJ 😈😈😈😈😈';case 'tesoura':return '/me LANSA DNV AI SE TEM CORAGEM';case 'pedra':return '/me Maldito 👺👺👺😡😡😡😡👿👿👿';default: return '/me Esse ai não vale 🤨🤨';}case 'pedra':switch(args[0].toLowerCase()) {case 'papel': return '/me Maldito 👺👺👺😡😡😡😡👿👿👿';case 'tesoura':return '/me Perdeu pro bot? KKKKKJ 😈😈😈😈😈';case 'pedra':return '/me LANSA DNV AI SE TEM CORAGEM';default: return '/me Esse ai não vale 🤨🤨';}}"
         },
         {
             "name": "!loja",
@@ -135,6 +135,11 @@
         {
             "name": "!sadjomax",
             "message": "return '/me jomax em busca do seu duo do amor no mine 😢😢'"
+        },
+        {
+            "name": "!perdemo",
+            "message": "_$.count = _$.count + 1; return `/me Perdemo ${_$.count} vezes já fml 😢😢😢` ",
+            "count": 0
         }
     ]
 }

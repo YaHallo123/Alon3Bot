@@ -36,7 +36,7 @@ client.on("raided", onRaidedHandler);
 client.on('join', (channel, username, self) => {
     clearInterval();
     CommandDB.reload()
-    if(!self || true) return;
+    if(!self) return;
     function InitInterval() {
         client.say(channel, "/me Me sigam ai nas redes sociais ✌. Instagram: https://www.instagram.com/taosozinho1/. Twitter: https://twitter.com/taosozinho1. Entrem lá no Discord, as vezes rola uns papos com a galera por lá: https://discord.gg/6H4wKg2rU4")
         setTimeout(() => client.say(channel, "/me Para adicionar músicas na song request, digite ai !sr e o nome da música ou um link do YouTube/SoundCloud, só lembra de ser BR, musica gringa pode dar copyright 😢👌"), 200000);
@@ -154,8 +154,8 @@ function ExeCommand(target, commandName, args, context, self, client, msg) {
         console.log(i);
         let command = CommandDB.getData(`/commands[${i}]`);
         console.log(command);
-        let exec = new Function("_$", "args", "context", "self", "commandName", "client", "target", "msg", "CommandDB", command.message);
-        let resp = exec(command, args, context, self, commandName, client, target, msg, CommandDB);
+        let exec = new Function("_$", "args", "context", "self", "commandName", "client", "target", "msg", "CommandDB", "cmdIndex", command.message);
+        let resp = exec(command, args, context, self, commandName, client, target, msg, CommandDB, i);
         if(resp === undefined || resp === null) return;
         let message = resp.toString();
         console.log(message);
