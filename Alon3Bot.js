@@ -129,6 +129,7 @@ function onMessageHandler(target, context, msg, self) {
             console.log(e);
         }
     } else {
+        console.log(context);
         ExeCommand(target, commandName, args, context, self, client, msg);
     }
 }

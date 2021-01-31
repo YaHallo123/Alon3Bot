@@ -50,11 +50,11 @@
         },
         {
             "name": "ja",
-            "message": "if(args[0].toLowerCase() === 'volto' && context['user-type'] !== '') client.say(target, '/me O MOD TA OFF, CABO A IGREJA 👺👺👺👺👺')"
+            "message": "if(args[0].toLowerCase() === 'volto' && context['user-type'] === 'mod' || context['user-type'] === 'global_mod' || context['user-type'] === 'admin') client.say(target, '/me O MOD TA OFF, CABO A IGREJA 👺👺👺👺👺')"
         },
         {
             "name": "já",
-            "message": "if(args[0].toLowerCase() === 'volto' && context['user-type'] !== '') client.say(target, '/me O MOD TA OFF, CABO A IGREJA 👺👺👺👺👺')"
+            "message": "if(args[0].toLowerCase() === 'volto' && context['user-type'] === 'mod' || context['user-type'] === 'global_mod' || context['user-type'] === 'admin') client.say(target, '/me O MOD TA OFF, CABO A IGREJA 👺👺👺👺👺')"
         },
         {
             "name": "!say",
@@ -130,7 +130,7 @@
         },
         {
             "name": "voltei",
-            "message": "if(context['user-type'] !== '')return 'MOD VOLTO, ACALMA O CABARÉ AI ✊😔👌👌👌👌'"
+            "message": "if(context['user-type'] === 'mod' || context['user-type'] === 'global_mod' || context['user-type'] === 'admin')return 'MOD VOLTO, ACALMA O CABARÉ AI ✊😔👌👌👌👌'"
         },
         {
             "name": "!sadjomax",
@@ -139,6 +139,11 @@
         {
             "name": "!perdemo",
             "message": "_$.count = _$.count + 1; return `/me Perdemo ${_$.count} vezes já fml 😢😢😢` ",
+            "count": 0
+        },
+        {
+            "name": "!ganhamo",
+            "message": "_$.count = _$.count + 1 return `/me Ganhamo ${_$.count} vezes já tropa 🤡🤡🤡🤡` ",
             "count": 0
         }
     ]
