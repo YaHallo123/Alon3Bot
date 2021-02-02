@@ -46,7 +46,7 @@ client.on('join', (channel, username, self) => {
         setTimeout(() => setInterval(() => client.say(channel, "/me Acessem os comandos disponéveis com !comandos"), 600000), 400000);
     }
     InitInterval();
-    if(true) return;
+    if(0) return;
     client.say(channel, "/me BOT ONN TROPA 🤡🤡🤡🤡🤡🤡🤡🤡🤡🤡🤡😈😈😈😈😈😈😈😈😈!!!!!!!!!!");
 });
 client.on("whisper", async (from, us, msg, self) => {
