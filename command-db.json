@@ -6,6 +6,7 @@
         },
         {
             "name": "its",
+            "displayName": "its grongos",
             "message": "if(args[0].toLowerCase() === 'grongos') return '/me ITS GRONGOS POHA 😎😎😎😎😎😎😎'"
         },
         {
@@ -14,10 +15,12 @@
         },
         {
             "name": "!pingola",
+            "displayName": "!pingola <texto>",
             "message": "let arg1 = '';let random = Math.round((Math.random() + Number.EPSILON) * 190) / 10;random++;if(args !== undefined && arg1 !== commandName) { arg1 = args.join(' ') + ' '; } else { arg1 = ''; }return `@${context.username}, o tamanho da sua pingola ${arg1}é de ${random}cm`"
         },
         {
             "name": "!daoban",
+            "displayName": "!daoban <nome>",
             "message": "let arg = '';if(args[0] !== undefined ) {arg = `@${args[0]} `}if(args[0] && args[0].toLowerCase && args[0].toLowerCase() === 'alon3bot') {return 'Não vai me banir >:)'; } return `${arg}VOCÊ ACABA DE SER B A N I D O(A) >:)`;"
         },
         {
@@ -50,14 +53,17 @@
         },
         {
             "name": "ja",
+            "displayName": "ja volto (mod)",
             "message": "if(args[0].toLowerCase() === 'volto' && context['user-type'] === 'mod' || context['user-type'] === 'global_mod' || context['user-type'] === 'admin') client.say(target, '/me O MOD TA OFF, CABO A IGREJA 👺👺👺👺👺')"
         },
         {
             "name": "já",
+            "exclude": true,
             "message": "if(args[0].toLowerCase() === 'volto' && context['user-type'] === 'mod' || context['user-type'] === 'global_mod' || context['user-type'] === 'admin') client.say(target, '/me O MOD TA OFF, CABO A IGREJA 👺👺👺👺👺')"
         },
         {
             "name": "!say",
+            "displayName": "!say <channel> <message>",
             "message": "if((args[0] === '' || args[0] === undefined || args[0] === null) || context['user-type'] === '' || (args[1] === '' || args[1] === undefined || args[1] === null)) return;let name = args.shift();client.say(`${name === 'self' ? target : '#' + name}`, args.join(' '));"
         },
         {
@@ -66,10 +72,12 @@
         },
         {
             "name": "na",
+            "displayName": "na mod, na bot",
             "message": "if(args[0].toLowerCase() === 'mod') {return '/me OLHA LA O MOD FAZENDO CAGADA 👌👌👌🤡🤡🤡'} else if(args[0].toLowerCase() === 'bot') { return '/me SUPREMACIA @Alon3Bot O MELHOR DE TODOS 😎😎😎😎😎😎😎'}"
         },
         {
             "name": "n/a",
+            "exclude": true,
             "message": "if(args[0].toLowerCase() === 'mod') {return '/me OLHA LA O MOD FAZENDO CAGADA 👌👌👌🤡🤡🤡'} else if(args[0].toLowerCase() === 'bot') { return '/me SUPREMACIA @Alon3Bot O MELHOR DE TODOS 😎😎😎😎😎😎😎'}"
         },
         {
@@ -90,10 +98,12 @@
         },
         {
             "name": "!so",
+            "displayName": "!so <channel>",
             "message": "return `www.twitch.tv/${args[0].toLowerCase()} PowerUpL GlitchCat PowerUpR PowerUpL GlitchCat PowerUpR Passem lá na live do/a mano/a @${args[0]}`"
         },
         {
             "name": "!paofilosofy",
+            "displayName": "!paofilosofy <idade>",
             "message": "if(args[0] === undefined || args[0] === '') {return 'Se dissermos que 1 pão estraga em 1 dia, cada dia da sua vida você poderia ter visto 1 pão envelhecer pra cada dia que você viveu 😳👌'}return `Você já é velho(a) suficiente pra ter visto ${Math.round(Number(args[0]) * 365.25)} pães velhos`"
         },
         {
@@ -110,9 +120,10 @@
         },
         {
             "name": "!pula",
+            "displayName": "!pula sim|nao|reset (mod)|result (mod)",
             "message": "if(commandName === '!pula') {try {let i = CommandDB.getIndex('/commands', _$.name, 'name');if(args[0].toLowerCase() === 'sim' && !_$.users.includes(context.username)) {_$.yes = _$.yes + 1;_$.users = [..._$.users, context.username];CommandDB.push(`/commands[${i}]`, _$, false);return `@${context.username}, Votou para pular a música e tem ${_$.yes} votos.`} else if((args[0].toLowerCase() === 'nao' || args[0].toLowerCase() === 'não') && !_$.users.includes(context.username)) {_$.no = _$.no + 1;_$.users = [..._$.users, context.username];CommandDB.push(`/commands[${i}]`, _$, true);return `@${context.username}, Votou para pular a música e tem ${_$.no} votos.`} else if(args[0].toLowerCase() === 'reset' && context['user-type'] !== '') {_$.yes = 0;_$.no = 0;_$.users=[];CommandDB.push(`/commands[${i}]`, _$, false);} else if(args[0].toLowerCase() === 'result' && context['user-type'] !== '') { return `O resultado da votação foi... Sim: ${_$.yes} X Não: ${_$.no}` }} catch(e) {console.log(e);}}",
-            "yes": 1,
-            "no": 1,
+            "yes": 0,
+            "no": 0,
             "users": [
                 "jomar_junixr2",
                 "jomar_junixr2",
@@ -121,6 +132,7 @@
         },
         {
             "name": "!ppt",
+            "displayName": "!ppt pedra|papel|tesoura",
             "users": [],
             "message": "let ppt=['papel','tesoura','pedra'];let botresp = ppt[Math.floor(Math.random()*ppt.length)];client.say(target, `/me ${botresp}`);switch(botresp) {case 'papel':switch(args[0].toLowerCase()) {case 'papel': return '/me LANSA DNV AI SE TEM CORAGEM';case 'tesoura':return '/me Maldito 👺👺👺😡😡😡😡👿👿👿';case 'pedra':return '/me Perdeu pro bot? KKKKKJ 😈😈😈😈😈';default: return '/me Esse ai não vale 🤨🤨';}case 'tesoura':switch(args[0].toLowerCase()) {case 'papel': return '/me Perdeu pro bot? KKKKKJ 😈😈😈😈😈';case 'tesoura':return '/me LANSA DNV AI SE TEM CORAGEM';case 'pedra':return '/me Maldito 👺👺👺😡😡😡😡👿👿👿';default: return '/me Esse ai não vale 🤨🤨';}case 'pedra':switch(args[0].toLowerCase()) {case 'papel': return '/me Maldito 👺👺👺😡😡😡😡👿👿👿';case 'tesoura':return '/me Perdeu pro bot? KKKKKJ 😈😈😈😈😈';case 'pedra':return '/me LANSA DNV AI SE TEM CORAGEM';default: return '/me Esse ai não vale 🤨🤨';}}"
         },
@@ -134,6 +146,7 @@
         },
         {
             "name": "voltei",
+            "displayName": "voltei (mod)",
             "message": "if(context['user-type'] === 'mod' || context['user-type'] === 'global_mod' || context['user-type'] === 'admin')return 'MOD VOLTO, ACALMA O CABARÉ AI ✊😔👌👌👌👌'"
         },
         {
@@ -148,6 +161,11 @@
         {
             "name": "!ganhamo",
             "message": "_$.count = _$.count + 1 return `/me Ganhamo ${_$.count} vezes já tropa 🤡🤡🤡🤡` ",
+            "count": 0
+        },
+        {
+            "name": "!catapa",
+            "message": "_$.count = _$.count + 1;return `/me O ADM MESTRE DO FARM ERROU ${_$.count} VEZES OMG` ",
             "count": 0
         }
     ]

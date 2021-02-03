@@ -46,7 +46,7 @@ client.on('join', (channel, username, self) => {
         setTimeout(() => setInterval(() => client.say(channel, "/me Acessem os comandos disponéveis com !comandos"), 600000), 400000);
     }
     InitInterval();
-    if(0) return;
+    if(1) return;
     client.say(channel, "/me BOT ONN TROPA 🤡🤡🤡🤡🤡🤡🤡🤡🤡🤡🤡😈😈😈😈😈😈😈😈😈!!!!!!!!!!");
 });
 client.on("whisper", async (from, us, msg, self) => {
@@ -81,7 +81,15 @@ function onMessageHandler(target, context, msg, self) {
 
     if(commandName === "!comandos") {
         let comandos = CommandDB.getData("/commands");
-        let msgcomandos = comandos.map(c => c.name).join(", ");
+        let msgcomandos = comandos.map(c => {
+            if(c.exclude) return;
+
+            if(c.displayName) {
+                return c.displayName;
+            } else {
+                return c.name;
+            }
+        }).join(", ");
         return client.say(target, msgcomandos);
     }
 
