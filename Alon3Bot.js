@@ -82,14 +82,14 @@ function onMessageHandler(target, context, msg, self) {
     if(commandName === "!comandos") {
         let comandos = CommandDB.getData("/commands");
         let msgcomandos = comandos.map(c => {
-            if(c.exclude) return;
+            if(c.exclude) {}
 
-            if(c.displayName) {
+            else if(c.displayName) {
                 return c.displayName;
             } else {
                 return c.name;
             }
-        }).join(", ");
+        }).join(",  ");
         return client.say(target, msgcomandos);
     }
 

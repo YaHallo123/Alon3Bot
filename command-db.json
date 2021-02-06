@@ -122,12 +122,23 @@
             "name": "!pula",
             "displayName": "!pula sim|nao|reset (mod)|result (mod)",
             "message": "if(commandName === '!pula') {try {let i = CommandDB.getIndex('/commands', _$.name, 'name');if(args[0].toLowerCase() === 'sim' && !_$.users.includes(context.username)) {_$.yes = _$.yes + 1;_$.users = [..._$.users, context.username];CommandDB.push(`/commands[${i}]`, _$, false);return `@${context.username}, Votou para pular a música e tem ${_$.yes} votos.`} else if((args[0].toLowerCase() === 'nao' || args[0].toLowerCase() === 'não') && !_$.users.includes(context.username)) {_$.no = _$.no + 1;_$.users = [..._$.users, context.username];CommandDB.push(`/commands[${i}]`, _$, true);return `@${context.username}, Votou para pular a música e tem ${_$.no} votos.`} else if(args[0].toLowerCase() === 'reset' && context['user-type'] !== '') {_$.yes = 0;_$.no = 0;_$.users=[];CommandDB.push(`/commands[${i}]`, _$, false);} else if(args[0].toLowerCase() === 'result' && context['user-type'] !== '') { return `O resultado da votação foi... Sim: ${_$.yes} X Não: ${_$.no}` }} catch(e) {console.log(e);}}",
-            "yes": 0,
+            "yes": 3,
             "no": 0,
             "users": [
-                "jomar_junixr2",
-                "jomar_junixr2",
-                "themonozilean"
+                "dantasx1122",
+                "dantasx1122",
+                "xxjomaxxk",
+                "dantasx1122",
+                "dantasx1122",
+                "xxjomaxxk",
+                "igorpereira2718",
+                "dantasx1122",
+                "dantasx1122",
+                "xxjomaxxk",
+                "dantasx1122",
+                "dantasx1122",
+                "xxjomaxxk",
+                "igorpereira2718"
             ]
         },
         {
@@ -167,6 +178,14 @@
             "name": "!catapa",
             "message": "_$.count = _$.count + 1;return `/me O ADM MESTRE DO FARM ERROU ${_$.count} VEZES OMG` ",
             "count": 0
+        },
+        {
+            "name": "!vakinha",
+            "message": "return 'Quem puder passar lá e fortalecer a @luciianerank, http://vaka.me/1764581?utm_campaign=whatsapp&utm_medium=website&utm_content=1764581&utm_source=social-shares'"
+        },
+        {
+            "name": "!vipzada",
+            "message": "return '/me vipzada é eterno e ganha direito a packs do pé exclusivos, pontos extra, desconto na loja e uma mamada'"
         }
     ]
 }
