@@ -41,7 +41,7 @@
         },
         {
             "name": "!musica",
-            "message": "return 'Para adicionar músicas na song request, digite ai !sr e o nome da música ou um link do YouTube/SoundCloud, só lembra de ser BR, musica gringa pode dar copyright 😢👌'"
+            "message": "return 'Para adicionar músicas na song request, digite ai !sr e o nome da música ou um link do YouTube/SoundCloud, só lembra de ser sem copyright😢👌'"
         },
         {
             "name": "!tutorial",
@@ -122,24 +122,9 @@
             "name": "!pula",
             "displayName": "!pula sim|nao|reset (mod)|result (mod)",
             "message": "if(commandName === '!pula') {try {let i = CommandDB.getIndex('/commands', _$.name, 'name');if(args[0].toLowerCase() === 'sim' && !_$.users.includes(context.username)) {_$.yes = _$.yes + 1;_$.users = [..._$.users, context.username];CommandDB.push(`/commands[${i}]`, _$, false);return `@${context.username}, Votou para pular a música e tem ${_$.yes} votos.`} else if((args[0].toLowerCase() === 'nao' || args[0].toLowerCase() === 'não') && !_$.users.includes(context.username)) {_$.no = _$.no + 1;_$.users = [..._$.users, context.username];CommandDB.push(`/commands[${i}]`, _$, true);return `@${context.username}, Votou para pular a música e tem ${_$.no} votos.`} else if(args[0].toLowerCase() === 'reset' && context['user-type'] !== '') {_$.yes = 0;_$.no = 0;_$.users=[];CommandDB.push(`/commands[${i}]`, _$, false);} else if(args[0].toLowerCase() === 'result' && context['user-type'] !== '') { return `O resultado da votação foi... Sim: ${_$.yes} X Não: ${_$.no}` }} catch(e) {console.log(e);}}",
-            "yes": 3,
+            "yes": 0,
             "no": 0,
-            "users": [
-                "dantasx1122",
-                "dantasx1122",
-                "xxjomaxxk",
-                "dantasx1122",
-                "dantasx1122",
-                "xxjomaxxk",
-                "igorpereira2718",
-                "dantasx1122",
-                "dantasx1122",
-                "xxjomaxxk",
-                "dantasx1122",
-                "dantasx1122",
-                "xxjomaxxk",
-                "igorpereira2718"
-            ]
+            "users": []
         },
         {
             "name": "!ppt",
@@ -166,18 +151,18 @@
         },
         {
             "name": "!perdemo",
-            "message": "_$.count = _$.count + 1; return `/me Perdemo ${_$.count} vezes já fml 😢😢😢` ",
-            "count": 0
+            "message": "_$.count = _$.count + 1;CommandDB.push(`/commands[${cmdIndex}]`, _$, true); return `/me Perdemo ${_$.count} vezes já fml 😢😢😢` ",
+            "count": 1
         },
         {
             "name": "!ganhamo",
-            "message": "_$.count = _$.count + 1 return `/me Ganhamo ${_$.count} vezes já tropa 🤡🤡🤡🤡` ",
-            "count": 0
+            "message": "_$.count = _$.count + 1;CommandDB.push(`/commands[${cmdIndex}]`, _$, true); return `/me Ganhamo ${_$.count} vezes já tropa 🤡🤡🤡🤡` ",
+            "count": 1
         },
         {
             "name": "!catapa",
-            "message": "_$.count = _$.count + 1;return `/me O ADM MESTRE DO FARM ERROU ${_$.count} VEZES OMG` ",
-            "count": 0
+            "message": "_$.count = _$.count + 1;CommandDB.push(`/commands[${cmdIndex}]`, _$, true);return `/me O ADM MESTRE DO FARM ERROU ${_$.count} VEZES OMG` ",
+            "count": 5
         },
         {
             "name": "!vakinha",
@@ -186,6 +171,18 @@
         {
             "name": "!vipzada",
             "message": "return '/me vipzada é eterno e ganha direito a packs do pé exclusivos, pontos extra, desconto na loja e uma mamada'"
+        },
+        {
+            "name": "!abre",
+            "message": "return '/me RAYAN SEU SAFADO ABRE O BUÇETÃO DE IMEDIATO 🤤🤤🤤🤤'"
+        },
+        {
+            "name": "!djliyma",
+            "message": "return '/me DJ LIYMA O TOCANDO DE TUDO E TODAS PARA O CHAT'"
+        },
+        {
+            "name": "!djjomax",
+            "message": "return '/me DJ JOMAX CHEGANDO PRA MOSTRAR CULTURA PRA ESSE POVO'"
         }
     ]
 }
