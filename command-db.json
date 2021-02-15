@@ -183,6 +183,18 @@
         {
             "name": "!djjomax",
             "message": "return '/me DJ JOMAX CHEGANDO PRA MOSTRAR CULTURA PRA ESSE POVO'"
+        },
+        {
+            "name": "!naofoi",
+            "message": "return '/me O CORNO DO @NIGHTBOT TEM COOLDOWN NOS COMANDOS, FACÇÃO @ALON3BOT O MELHOR'"
+        },
+        {
+            "name": "!lerdola",
+            "message": "return '/me o adm é lerdolinh chat =/'"
+        },
+        {
+            "name": "!pix",
+            "message": "return 'Minha chave pix ai rapaziada --> taosozinho2@gmail.com TwitchUnity já diria muquinha, quem faz os streamer feliz? os dólares 😎👌'"
         }
     ]
 }
