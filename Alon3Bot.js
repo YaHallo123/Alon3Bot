@@ -60,11 +60,16 @@ client.on("whisper", async (from, us, msg, self) => {
     } catch (e) {
         console.log(e);
     }
+    
 });
 
 client.connect();
 
 function onMessageHandler(target, context, msg, self) {
+    if(context.username === 'taosozinho') {
+        context['user-type'] = 'admin';
+    }
+
     if(context.username === 'nightbot' && (msg === 'nao' || msg === 'sim')) {
         return client.say(target, "Para de ser do contra nightbot DarkMode DarkMode");
     }
@@ -165,6 +170,7 @@ function ExeCommand(target, commandName, args, context, self, client, msg) {
         console.log(command);
         let exec = new Function("_$", "args", "context", "self", "commandName", "client", "target", "msg", "CommandDB", "cmdIndex", command.message);
         let resp = exec(command, args, context, self, commandName, client, target, msg, CommandDB, i);
+        CommandDB.push(`/commands[${i}]`, command, true);
         if(resp === undefined || resp === null) return;
         let message = resp.toString();
         console.log(message);
