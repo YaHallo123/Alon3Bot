@@ -167,6 +167,7 @@ function ExeCommand(target, commandName, args, context, self, client, msg) {
         if(i === -1) return;
         console.log(i);
         let command = CommandDB.getData(`/commands[${i}]`);
+        if(command.stopSpam || (command.blacklist && command.blacklist.includes(context.username))) { return;}
         console.log(command);
         let exec = new Function("_$", "args", "context", "self", "commandName", "client", "target", "msg", "CommandDB", "cmdIndex", command.message);
         let resp = exec(command, args, context, self, commandName, client, target, msg, CommandDB, i);

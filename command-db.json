@@ -137,8 +137,8 @@
             "name": "!pula",
             "displayName": "!pula sim|nao|reset (mod)|result (mod)",
             "message": "if(commandName === '!pula') {try {let i = cmdIndex;if(args[0].toLowerCase() === 'sim' && !_$.users.includes(context.username)) {_$.yes = _$.yes + 1;_$.users = [..._$.users, context.username];return `@${context.username}, Votou para pular a música e tem ${_$.yes} votos.`} else if((args[0].toLowerCase() === 'nao' || args[0].toLowerCase() === 'não') && !_$.users.includes(context.username)) {_$.no = _$.no + 1;_$.users = [..._$.users, context.username];return `@${context.username}, Votou para pular a música e tem ${_$.no} votos.`} else if(args[0].toLowerCase() === 'reset' && context['user-type'] !== '') {_$.yes = 0;_$.no = 0;_$.users=[];} else if(args[0].toLowerCase() === 'result' && context['user-type'] !== '') { return `O resultado da votação foi... Sim: ${_$.yes} X Não: ${_$.no}` }} catch(e) {console.log(e);}}",
-            "yes": 1,
-            "no": 0,
+            "yes": 0,
+            "no": 1,
             "users": [
                 "igorpereira2718"
             ]
@@ -187,7 +187,7 @@
         },
         {
             "name": "!vipzada",
-            "message": "return `/me Vipzada de 1 mês, aquele iconezinho bunitu, com packs do pé exclusivos, pontos extras na loja, sem limite na song request, e claro, uma mamada`"
+            "message": "return `/me Vipzada de 1 mês, aquele iconezinho bunitu, com packs do pé exclusivos, pontos extras na loja, sem limite na song request, cargo no discord, e claro, uma mamada`"
         },
         {
             "name": "!abre",
@@ -249,6 +249,26 @@
         {
             "name": "!pombo",
             "message": "const pombo = '⣿⣿⣿⣿⠟⣩⣴⣶⣦⣍⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⢏⣾⣿⣿⠿⣿⣿⣿⣌⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⠟⣩⣬⣭⠻⣿⣀⣿⣿⣿⢟⣤⡙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣷⣤⣒⠲⠶⢿⣘⣛⣻⠿⣿⣸⣿⣿⣷⣝⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⠸⣿⣿⣿⣿⣿⣦⢹⣿⣿⣿⣿⣷⣌⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⡿⢉⣴⣶⣦⠙⣿⣿⣿⣿⡼⣿⣿⣿⣿⣿⢿⣷⡌⢿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣷⡘⠿⠟⣛⡁⢻⣿⣿⣿⣿⣝⢿⣿⠻⣿⢮⣭⣥⣄⡹⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⡇⢿⣿⣿⣿⠘⣿⣿⣿⣿⣿⣷⣦⣟⡶⠶⢾⣭⣽⣗⡈⠻⣿⣿⣿⣿⣿ ⣿⣿⣷⡈⣿⣿⣿⣧⣌⠛⠿⣿⣿⣿⣿⣿⣿⣷⣷⡲⣶⣶⣾⣷⣌⡛⢿⣿⣿ ⣿⣿⣿⠗⡈⠻⣿⣿⡿⢛⣶⣤⣍⠻⣿⣿⣿⣿⣿⡿⠆⠻⠿⣿⣿⡿⠗⣢⣿ ⣿⣿⡏⢼⣿⣷⣶⢋⣴⣿⣿⣿⣿⡇⢀⣠⠄⣠⣶⣶⣿⣿⣷⣶⣶⣶⣿⣿⣿ ⣿⣿⣷⣌⠛⠛⠛⠈⠛⠛⠛⠛⢛⠁⢈⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣇⡈⢉⣩⡭⠽⢛⣒⣒⣒⣈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣇⣉⣥⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿'; const p = Number(args[0] || 100); return pombo.slice(0, Math.round(pombo.length * p / 100))"
+        },
+        {
+            "name": "!subzada",
+            "message": "return '/me Subzada não toma ad e ganha emotes do canal claro, recebe direito ao seu próprio comando na live, imunidade a timeout, cargo no discord, pontos extra na loja e descontos, sem limite de musicas no bot'"
+        },
+        {
+            "name": "!topchatter",
+            "message": "return '/me Quem interagir mais no chat durante a semana recebe o cargo top chatter no discord https://discord.com/invite/G53p4kJCdm'"
+        },
+        {
+            "name": "!inosuke",
+            "message": "return '/me SHOOOOOOOOOUBU DA!!!!!!'"
+        },
+        {
+            "name": "!zenitsu",
+            "message": "return '/me CASA COMIGO PLMD PFV EU TE IMPLORO NAMORAL SO CASA COMIGO FAZ A BOA LINDA DMS CASA COMIGO SERIAO EU VOU MORRER AMANHÃ SE PÁ 😭😭😭'"
+        },
+        {
+            "name": "!info",
+            "message": "return JSON.stringify(_$)"
         }
     ]
 }
