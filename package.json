@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "linq4js": "^2.2.3",
     "node-json-db": "^1.1.0",
     "tmi.js": "^1.7.1"
   },

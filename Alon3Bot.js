@@ -1,3 +1,4 @@
+require('linq4js');
 const { Client } = require("tmi.js");
 
 const { JsonDB } = require("node-json-db");
@@ -167,10 +168,22 @@ function ExeCommand(target, commandName, args, context, self, client, msg) {
         if(i === -1) return;
         console.log(i);
         let command = CommandDB.getData(`/commands[${i}]`);
-        if(command.stopSpam || (command.blacklist && command.blacklist.includes(context.username))) { return;}
+        console.log('cooldown??????',command.cooldown && command.cooldowns && command.cooldowns.includes(context.username));
+        if(command.stopSpam || (command.blacklist && command.blacklist.includes(context.username)) || (command.cooldown && command.cooldowns && command.cooldowns.includes(context.username))) { return;}
         console.log(command);
         let exec = new Function("_$", "args", "context", "self", "commandName", "client", "target", "msg", "CommandDB", "cmdIndex", command.message);
         let resp = exec(command, args, context, self, commandName, client, target, msg, CommandDB, i);
+        if(command.cooldown && command.cooldown > 0) {
+            if(command.cooldowns === undefined) command.cooldowns = [];
+            command.cooldowns.push(context.username);
+            setTimeout(() => {
+                let cbI = i;
+                let cbCommand = command;
+                cbCommand.cooldowns.Remove(context.username);
+                CommandDB.push(`/commands[${cbI}]`, cbCommand, true);
+            }, Number(command.cooldown) * 1000);
+        }
+
         CommandDB.push(`/commands[${i}]`, command, true);
         if(resp === undefined || resp === null) return;
         let message = resp.toString();

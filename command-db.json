@@ -16,7 +16,10 @@
         {
             "name": "!pingola",
             "displayName": "!pingola <texto>",
-            "message": "let arg1 = '';let random = Math.round((Math.random() + Number.EPSILON) * 190) / 10;random++;if(args !== undefined && arg1 !== commandName) { arg1 = args.join(' ') + ' '; } else { arg1 = ''; }return `@${context.username}, o tamanho da sua pingola ${arg1}é de ${random}cm`"
+            "message": "let arg1 = '';let random = Math.round((Math.random() + Number.EPSILON) * 190) / 10;random++;if(args !== undefined && arg1 !== commandName) { arg1 = args.join(' ') + ' '; } else { arg1 = ''; }return `@${context.username}, o tamanho da sua pingola ${arg1}é de ${random}cm`",
+            "stopSpam": false,
+            "cooldown": 5,
+            "cooldowns": []
         },
         {
             "name": "!daoban",
@@ -269,6 +272,18 @@
         {
             "name": "!info",
             "message": "return JSON.stringify(_$)"
+        },
+        {
+            "name": "!vini",
+            "message": "return 'O Vini pode ser um pouco burro as vezes... ✋😔'"
+        },
+        {
+            "name": "!mod",
+            "message": "return '/me é isso mesmo... não resta duvidas rapeize, o modederador é corno'"
+        },
+        {
+            "name": "!mijada",
+            "message": "return '/me O Ademir foi esvaziar a bexiga esse velho de bexiga minuscula'"
         }
     ]
 }
