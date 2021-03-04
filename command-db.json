@@ -24,7 +24,7 @@
         {
             "name": "!daoban",
             "displayName": "!daoban <nome>",
-            "message": "let arg = '';if(args[0] !== undefined ) {arg = `@${args[0]} `}if(args[0] && args[0].toLowerCase && args[0].toLowerCase() === 'alon3bot') {return 'Não vai me banir >:)'; } return `${arg}VOCÊ ACABA DE SER B A N I D O(A) >:)`;"
+            "message": "let arg = '';if(args[0] !== undefined ) {arg = `${args[0]} `}if(args[0] && args[0].toLowerCase && args[0].toLowerCase() === 'alon3bot') {return 'Não vai me banir >:)'; } return `${arg}VOCÊ ACABA DE SER B A N I D O(A) >:)`;"
         },
         {
             "name": "!taloco",
@@ -284,6 +284,10 @@
         {
             "name": "!mijada",
             "message": "return '/me O Ademir foi esvaziar a bexiga esse velho de bexiga minuscula'"
+        },
+        {
+            "name": "!lee",
+            "message": "return '/me KR Challenger Lee Sin 2567LP OMG Insane Mechanics How Does He Do That?'"
         }
     ]
 }
